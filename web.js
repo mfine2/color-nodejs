@@ -10,7 +10,7 @@ app.use(express.logger());
 app.get('/', function(req, res) {
   res.send('Hello World!');
 });
-app.get('/fatch', function(req, res) {
+app.get('/fetch', function(req, res) {
 	fatchPage(req, res);
 });
 app.get('/json', function(req, res) {
