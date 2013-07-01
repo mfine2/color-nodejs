@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>名·色彩</title>
+</head>
+<body>
+    <div style="width: 300px; margin: 50px auto; text-align: center;">
+        <a href="http://mingcolor.herokuapp.com/mingcolor.apk" target="_blank">
+            <img id="qrimg" src="" alt="二维码" title="点击下载Android版本" />
+        </a>
+        <span>名·色彩&nbsp;&nbsp;</span>
+        <a href="http://mingcolor.herokuapp.com/mingcolor.apk" target="_blank">Android版下载</a>
+    </div>
+
+<script type="text/javascript">
+    var url = 'https://chart.googleapis.com/chart?cht=qr&chs=300x300&choe=UTF-8&chld=L|4&chl=' + 'http://mingcolor.herokuapp.com/mingcolor.apk';
+    var qrimg = document.getElementById("qrimg");
+    qrimg.src = url;
+</script>
+</body>
+</html>

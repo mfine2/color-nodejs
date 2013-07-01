@@ -7,15 +7,16 @@ var fs = require('fs');
 var app = express();
 app.use(express.logger());
 
-app.get('/', function(req, res) {
-  res.send('Hello World!');
-});
+//app.get('/', function(req, res) {
+//  res.send('Hello World!');
+//});
 app.get('/fetch', function(req, res) {
 	fatchPage(req, res);
 });
 app.get('/json', function(req, res) {
 	getJSON(req, res);
 });
+app.use(express.static(__dirname + '/public'));
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
@@ -54,10 +55,10 @@ function getData($) {
 		var obj = {};
 		var $tr = $(this);
 		var $tds = $tr.children("td");
-		obj.en = $tds.eq(1).html();
-		obj.zh = $tds.eq(2).html();
-		obj.hex = $tds.eq(3).html();
-		obj.rgb = $tds.eq(4).html();
+		obj.en = $.trim($tds.eq(1).html());
+		obj.zh = $.trim($tds.eq(2).html());
+		obj.hex = $.trim($tds.eq(3).html());
+		obj.rgb = $.trim($tds.eq(4).html());
 		arr.push(obj);
 	});
 	return arr;
